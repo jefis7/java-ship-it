@@ -3,6 +3,8 @@ package ru.yandex.practicum.delivery.parcel;
 import ru.yandex.practicum.delivery.tracking.Trackable;
 
 public class FragileParcel extends Parcel implements Trackable {
+    protected static final int COST_ONE_UNIT_SHIPMENT_FRAGILE_PARCEL = 4;
+
     public FragileParcel(ParcelType type, String description, int weight, String deliveryAddress, int sendDay) {
         super(type, description, weight, deliveryAddress, sendDay);
     }
@@ -16,11 +18,6 @@ public class FragileParcel extends Parcel implements Trackable {
     @Override
     public int getUnitCost() {
         return COST_ONE_UNIT_SHIPMENT_FRAGILE_PARCEL;
-    }
-
-    @Override
-    protected String getType() {
-        return ParcelType.FRAGILE.name();
     }
 
     @Override

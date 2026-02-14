@@ -7,9 +7,6 @@ public abstract class Parcel {
     protected int weight;
     protected String deliveryAddress;
     protected int sendDay;
-    protected static final int COST_ONE_UNIT_SHIPMENT_STANDARD_PARCEL = 2;
-    protected static final int COST_ONE_UNIT_SHIPMENT_PERISHABLE_PARCEL = 3;
-    protected static final int COST_ONE_UNIT_SHIPMENT_FRAGILE_PARCEL = 4;
 
     public Parcel(ParcelType type, String description, int weight, String deliveryAddress, int sendDay) {
         this.type = type;
@@ -46,7 +43,6 @@ public abstract class Parcel {
         System.out.printf("Посылка <<%s>> доставлена по адресу %s%n", description, deliveryAddress);
     }
 
-    protected abstract String getType();
     protected abstract int getUnitCost();
 
     public int calculateDeliveryCost() {
